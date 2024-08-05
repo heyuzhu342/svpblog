@@ -13,6 +13,7 @@
 
 from django.db import models
 from django.conf import settings
+import ckeditor.fields
 
 
 # Create your models here.
@@ -23,12 +24,17 @@ class Tag(models.Model):
     def __str__(self):
         return self.tag_name
 
+    class Meta:
+        verbose_name = "标签"
+        verbose_name_plural = verbose_name
+
 
 class Article(models.Model):
     title = models.CharField(max_length=200)  # 博客标题
     category = models.ForeignKey('Category', verbose_name='文章类型', on_delete=models.CASCADE)
     date_time = models.DateField(auto_now_add=True)  # 博客日期
-    content = models.TextField(blank=True, null=True)  # 文章正文
+    # content = models.TextField(blank=True, null=True)  # 文章正文
+    content = ckeditor.fields.RichTextField()  # 使用富文本编辑器
     digest = models.TextField(blank=True, null=True)  # 文章摘要
     author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='作者', on_delete=models.CASCADE)
     view = models.BigIntegerField(default=0)  # 阅读数
@@ -61,6 +67,8 @@ class Article(models.Model):
 
     class Meta:  # 按时间降序
         ordering = ['-date_time']
+        verbose_name = "文章"
+        verbose_name_plural = verbose_name
 
 
 class Category(models.Model):
@@ -70,7 +78,7 @@ class Category(models.Model):
 
     class Meta:
         ordering = ['name']
-        verbose_name = "文章类型"
+        verbose_name = "分类"
         verbose_name_plural = verbose_name
 
     def __str__(self):

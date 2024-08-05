@@ -32,13 +32,16 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'simpleui',  # 注意这里
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog.apps.BlogConfig'
+    'blog.apps.BlogConfig',
+
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -80,10 +83,10 @@ WSGI_APPLICATION = 'django_blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blog',
+        'NAME': 'myblogspider',
         'USER': 'root',
-        'PASSWORD': 'jccfc',
-        'HOST': '19.19.9.231',
+        'PASSWORD': 'root',
+        'HOST': '127.0.0.1',
         'PORT': '3306'
     }
 }
@@ -133,3 +136,47 @@ STATICFILES_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
+
+# 媒体文件地址
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+# CKEDITOR_CONFIGS = {
+#     # django-ckeditor默认使用default配置
+#     'default': {
+#         # 编辑器宽度自适应
+#         'width': 'auto',
+#         'height': '250px',
+#         # tab键转换空格数
+#         'tabSpaces': 4,
+#         # 工具栏风格
+#         'toolbar': 'Custom',
+#         # 'toolbar': [
+#         #     ['Undo', 'Redo', 'RemoveFormat',
+#         #      'Smiley', 'Bold', 'Italic', 'Underline',
+#         #      'TextColor', 'BGColor', 'NumberedList', 'BulletedList', 'Outdent', 'Indent', 'Table',
+#         #      'Blockquote', 'HorizontalRule', 'CodeSnippet', 'Mathjax',
+#         #      'Image', 'Html5video', 'Link', 'Unlink',
+#         #      'Font', 'FontSize', 'Format']
+#         # ],
+#         # 工具栏按钮
+#         'toolbar_Custom': [
+#             # 表情 代码块
+#             ['Smiley', 'CodeSnippet'],
+#             # 字体风格
+#             ['Bold', 'Italic', 'Underline', 'RemoveFormat', 'Blockquote'],
+#             # 字体颜色
+#             ['TextColor', 'BGColor'],
+#             # 链接
+#             ['Link', 'Unlink'],
+#             # 列表
+#             ['NumberedList', 'BulletedList'],
+#             # 最大化
+#             ['Maximize']
+#         ],
+#         # 插件
+#         'extraPlugins': ','.join(['codesnippet', 'prism', 'widget', 'lineutils']),
+#     }
+# }
