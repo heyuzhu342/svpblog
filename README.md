@@ -5,7 +5,7 @@
 
 使用Django快速搭建博客
 ### 要求
-* Python: 3.5
+* Python: 3.7
 * Django: 2.2.0
 
 ### 示例博客：<http://www.spiderpy.cn/blog>
@@ -19,6 +19,8 @@
 * 多目标源博文分享
 * 博文归档
 * 友情链接
+* 增加Simpleui后台编辑
+* 增加富文本编辑器 ckeditor
 
 ### 下载
 ```
