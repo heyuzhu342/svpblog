@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae5925de-6437-4bf0-a78c-39cd34cc50df" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/django_blog/blogroll.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_blog/blogroll.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/blog/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/blog/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/blog/blogroll.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/blog/blogroll.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/blog/component/changyan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/blog/component/changyan.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/blog/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/blog/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/blog/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/blog/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/blog/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/blog/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/blog/right.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/blog/right.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/django-blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/django-blog.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/blog/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_blog/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_blog/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,10 +26,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/manage.py" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="Runserver" type="PythonConfigurationType" factoryName="Python">
@@ -66,11 +66,27 @@
       <option name="presentableId" value="Default" />
       <updated>1722866368632</updated>
       <workItem from="1722866375805" duration="4000" />
-      <workItem from="1723123426486" duration="133000" />
+      <workItem from="1723123426486" duration="6940000" />
+      <workItem from="1723210013846" duration="658000" />
+      <workItem from="1723364760820" duration="955000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/django_blog$Runserver.coverage" NAME="Runserver Coverage Results" MODIFIED="1723365604071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

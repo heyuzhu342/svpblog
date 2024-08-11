@@ -13,9 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+
 from django.urls import path, include
 from django.contrib import admin
 from blog import views
+from django.conf.urls.static import static
+from src.django_blog import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,3 +30,7 @@ urlpatterns = [
 
 handler404 = views.page_not_found_error
 handler500 = views.page_error
+
+if settings.DEBUG:
+    # 仅在开发环境下添加媒体文件服务
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

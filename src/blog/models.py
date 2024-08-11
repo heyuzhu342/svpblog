@@ -10,7 +10,9 @@
                    2016/11/18:
 -------------------------------------------------
 """
+import datetime
 
+from PIL import Image
 from django.db import models
 from django.conf import settings
 import ckeditor.fields
@@ -40,10 +42,24 @@ class Article(models.Model):
     view = models.BigIntegerField(default=0)  # 阅读数
     comment = models.BigIntegerField(default=0)  # 评论数
     picture = models.CharField(max_length=200)  # 标题图片地址
+    picture_img = models.ImageField(upload_to='article/%Y%m%d/', blank=True)
     tag = models.ManyToManyField(Tag)  # 标签
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        # 在保存对象之前更新 image_url 字段
+        today = datetime.date.today().strftime('%Y%m%d')
+        self.picture = "/media/article/{}/".format(today) + str(self.picture_img)
+        super(Article, self).save(*args, **kwargs)
+
+        img = Image.open(self.picture_img.path)
+        if img.height > 200 or img.width > 300:
+            output_size = (200, 300)
+            img.thumbnail(output_size)
+            img.save(self.picture_img.path)
+
 
     def sourceUrl(self):
         source_url = settings.HOST + '/blog/detail/{id}'.format(id=self.pk)

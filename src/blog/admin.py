@@ -12,6 +12,7 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'author', 'date_time', 'view')
     list_filter = ('category', 'author')
     filter_horizontal = ('tag',)
+    exclude = ('picture',)
 
 
 @admin.register(Category)

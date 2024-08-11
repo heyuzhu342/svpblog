@@ -143,6 +143,17 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
+
+# SimpleUi后台设置
+SIMPLEUI_LOGO = 'https://i.loli.net/2020/04/23/jGP8gQOYW75TSJp.png'  # 登录页和后台logo
+SIMPLEUI_ANALYSIS = False  # 是否向SimpleUi收集分析信息
+SIMPLEUI_LOADING = False  # 是否打开Loading遮罩层
+SIMPLEUI_LOGIN_PARTICLES = True  # 登录页粒子动画
+SIMPLEUI_STATIC_OFFLINE = True  # 是否以脱机模式加载静态资源，为True的时候将默认从本地读取所有资源，即使没有联网一样可以。适合内网项目，不填该项或者为False的时候，默认从第三方的cdn获取
+SIMPLEUI_HOME_INFO = False  # 是否打开SimpleUi服务器信息
+SIMPLEUI_DEFAULT_THEME = 'simpleui.css'  # 默认主题 https://simpleui.88cto.com/docs/simpleui/QUICK.html#%E9%BB%98%E8%AE%A4%E4%B8%BB%E9%A2%98
+SIMPLEUI_HOME_QUICK = True  # 后台页面是否显示最近动作
+
 # CKEDITOR_CONFIGS = {
 #     # django-ckeditor默认使用default配置
 #     'default': {
