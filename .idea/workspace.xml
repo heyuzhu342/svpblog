@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae5925de-6437-4bf0-a78c-39cd34cc50df" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/django-blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/django-blog.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/blog/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/blog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/django_blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_blog/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/django_blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/blog/component/blog_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/blog/component/blog_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +65,8 @@
       <workItem from="1722866375805" duration="4000" />
       <workItem from="1723123426486" duration="6940000" />
       <workItem from="1723210013846" duration="658000" />
-      <workItem from="1723364760820" duration="955000" />
+      <workItem from="1723364760820" duration="1840000" />
+      <workItem from="1723387109549" duration="1974000" />
     </task>
     <servers />
   </component>
@@ -87,6 +85,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/django_blog$Runserver.coverage" NAME="Runserver Coverage Results" MODIFIED="1723365604071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/django_blog$Runserver.coverage" NAME="Runserver Coverage Results" MODIFIED="1723366191214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

@@ -41,8 +41,8 @@ class Article(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='作者', on_delete=models.CASCADE)
     view = models.BigIntegerField(default=0)  # 阅读数
     comment = models.BigIntegerField(default=0)  # 评论数
-    picture = models.CharField(max_length=200)  # 标题图片地址
-    picture_img = models.ImageField(upload_to='article/%Y%m%d/', blank=True)
+    picture = models.CharField(max_length=200)  # 标题图片存放文件夹
+    picture_img = models.ImageField(upload_to='article/%Y%m%d/', blank=True)  # 图片存放的完整路径
     tag = models.ManyToManyField(Tag)  # 标签
 
     def __str__(self):
@@ -59,7 +59,6 @@ class Article(models.Model):
             output_size = (200, 300)
             img.thumbnail(output_size)
             img.save(self.picture_img.path)
-
 
     def sourceUrl(self):
         source_url = settings.HOST + '/blog/detail/{id}'.format(id=self.pk)

@@ -7,8 +7,9 @@
                 <li {% if blog.view > 1000 %} id="tuijian" {% elif article.view > 500 %} id="Hot" {% endif %}>
             {% endif %}
         <div class="arcimg">
-            <img src="{{ blog.picture }}"
-                 alt="{{ blog.title }}" title="{{ blog.title }}"/>
+            <a href="{% url "blog:detail" blog.id %}"
+                                     aria-label="{{ blog.title }}"><img src="{{ blog.picture }}"
+                 alt="{{ blog.title }}" title="{{ blog.title }}"/></a>
         </div>
         <div class="arc-right">
             <h4 class="blue-text"><a href="{% url "blog:detail" blog.id %}"
