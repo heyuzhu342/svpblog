@@ -14,17 +14,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.contrib import admin
 from blog import views
 from django.conf.urls.static import static
-from src.django_blog import settings
+from django_blog import settings
+
+from blog.views import PhotoGroupView, PhotoView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include(('blog.urls', 'blog'), namespace='blog')),
-    path('', views.index, name='index'),
+    path('index/', views.index, name='index'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path(r'', PhotoGroupView.as_view(), name="photogroup"),
+    re_path(r'photogroup/(?P<group>\w+)/', PhotoView.as_view(), name="photo"),
+
 
 ]
 

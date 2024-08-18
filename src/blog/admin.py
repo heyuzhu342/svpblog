@@ -3,7 +3,7 @@ from django.contrib import admin
 # Register your models here.
 
 
-from blog.models import Tag, Article, Category
+from blog.models import Tag, Article, Category, PhotoGroup, Photo
 
 
 @admin.register(Article)
@@ -22,4 +22,14 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(PhotoGroup)
+class PhotoGroupAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Photo)
+class PhotoAdmin(admin.ModelAdmin):
     pass

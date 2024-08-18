@@ -1,0 +1,32 @@
+{% extends "blog/base.html" %}
+
+{#{% block title %}#}
+{#| 相册#}
+{#{% endblock %}#}
+
+{% block content %}
+<div id="main" class="content">
+        <section class="post_content">
+            <div class="photoItems">
+                <ul id="da-thumbs" class="da-thumbs">
+                    {% for photogroup in photogroups %}
+                    <li>
+                        <a href="/photogroup/{{ photogroup.name }}/" class="b-link-stripe b-animate-go thickbox">
+                            <img src="media/{{ photogroup.cover }}" width="250" height="250" alt=""/>
+                            <div>
+                                <h5>{{ photogroup.name }}</h5>
+                                <span>{{ photogroup.desc }}</span>
+                            </div>
+                        </a>
+                    </li>
+                    {% empty %}
+                        <div>
+                            <h5>你还没有建立相册</h5>
+                            <span>没有了，啥图片都没有</span>
+                        </div>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+    </div>
+{% endblock %}
