@@ -25,9 +25,9 @@ from blog.views import PhotoGroupView, PhotoView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include(('blog.urls', 'blog'), namespace='blog')),
-    path('index/', views.index, name='index'),
+    path('', views.index, name='index'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    path(r'', PhotoGroupView.as_view(), name="photogroup"),
+    path('photogroup/', PhotoGroupView.as_view(), name="photogroup"),
     re_path(r'photogroup/(?P<group>\w+)/', PhotoView.as_view(), name="photo"),
 
 

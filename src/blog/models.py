@@ -146,10 +146,11 @@ class Photo(models.Model):
     view_img.short_description = '预览'
     view_img.allow_tags = True
 
-    def save(self, *args, **kwargs):
-        # 在保存对象之前更新 image_url 字段
-        img = Image.open(self.photo.path)
-        if img.height > 200 or img.width > 300:
-            output_size = (200, 300)
-            img.thumbnail(output_size)
-            img.save(self.photo.path)
+    # def save(self, *args, **kwargs):
+    #     # 在保存对象之前更新 image_url 字段
+    #     print(self.photo.path)
+    #     img = Image.open(self.photo.path)
+    #     if img.height > 200 or img.width > 300:
+    #         output_size = (200, 300)
+    #         img.thumbnail(output_size)
+    #         img.save(self.photo.path)

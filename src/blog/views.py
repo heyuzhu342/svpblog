@@ -154,6 +154,8 @@ class PhotoGroupView(ListView):
     template_name = 'photogroup.html'
     context_object_name = "photogroups"
     queryset = PhotoGroup.objects.filter(active=True)
+    paginate_by = 2
+    ordering = '-create_time'
 
     def get_context_data(self, **kwargs):
         context = super(PhotoGroupView, self).get_context_data(**kwargs)

@@ -25,11 +25,34 @@ class TagAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(PhotoGroup)
+# @admin.register(Photo)
+# class PhotoAdmin(admin.TabularInline):
+#     model = Photo
+#     fields = ('group', 'photo', 'desc', 'view_img')
+#     readonly_fields = ('view_img',)
+#     exclude = ('view_img',)
+#
+#
+# @admin.register(PhotoGroup)
+# class PhotoGroupAdmin(admin.ModelAdmin):
+#     list_display = ('name', 'desc', 'create_time', 'update_time', 'active')
+#     list_filter = ('active', 'create_time', 'update_time')
+#     fields = ('name', 'cover', 'desc', 'active',)
+#     inlines = [PhotoAdmin, ]
+
+
+class PhotoAdmin(admin.TabularInline):
+    model = Photo
+    fields = ('group', 'photo', 'desc', 'view_img')
+    readonly_fields = ('view_img',)
+    exclude = ('view_img',)
+
+
 class PhotoGroupAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name', 'desc', 'create_time', 'update_time', 'active')
+    list_filter = ('active', 'create_time', 'update_time')
+    fields = ('name', 'cover', 'desc', 'active',)
+    inlines = [PhotoAdmin, ]
 
 
-@admin.register(Photo)
-class PhotoAdmin(admin.ModelAdmin):
-    pass
+admin.site.register(PhotoGroup, PhotoGroupAdmin)

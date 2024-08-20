@@ -6,27 +6,51 @@
 
 {% block content %}
 <div id="main" class="content">
-        <section class="post_content">
-            <div class="photoItems">
-                <ul id="da-thumbs" class="da-thumbs">
-                    {% for photogroup in photogroups %}
-                    <li>
-                        <a href="/photogroup/{{ photogroup.name }}/" class="b-link-stripe b-animate-go thickbox">
-                            <img src="media/{{ photogroup.cover }}" width="250" height="250" alt=""/>
-                            <div>
-                                <h5>{{ photogroup.name }}</h5>
-                                <span>{{ photogroup.desc }}</span>
-                            </div>
-                        </a>
-                    </li>
-                    {% empty %}
+    <section class="post_content">
+        <div class="photoItems">
+            <ul id="da-thumbs" class="da-thumbs">
+                {% for photogroup in photogroups %}
+                <li>
+                    <a href="/photogroup/{{ photogroup.name }}/" class="b-link-stripe b-animate-go thickbox">
+                        <img src="/media/{{ photogroup.cover }}" width="250" height="250" alt=""/>
                         <div>
-                            <h5>你还没有建立相册</h5>
-                            <span>没有了，啥图片都没有</span>
+                            <h5>{{ photogroup.name }}</h5>
+                            <span>{{ photogroup.desc }}</span>
                         </div>
-                    {% endfor %}
-                </ul>
-            </div>
-        </section>
-    </div>
+                    </a>
+                </li>
+                {% empty %}
+                <div>
+                    <h5>你还没有建立相册</h5>
+                    <span>没有了，啥图片都没有</span>
+                </div>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- 分页控件 -->
+        <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; 首页</a>
+            <a href="?page={{ page_obj.previous_page_number }}">&lsaquo; 前一页</a>
+        {% endif %}
+
+        {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+                <a href="?page={{ num }}" class="current">{{ num }}</a>
+            {% else %}
+                <a href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">下一页 &rsaquo;</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">最后 &raquo;</a>
+        {% endif %}
+    </span>
+        </div>
+    </section>
+</div>
+
+
 {% endblock %}

@@ -18,3 +18,5 @@ class PathAndRename(object):
         fntime = time.strftime('%Y%m%d%H%M%S') + '_%d' % random.randint(10, 99)
         last_filename = "%s-%s%s" % (sub('\W+', '', filename[0]), fntime, filename[1])
         return os.path.join(self.path, last_filename)
+
+
